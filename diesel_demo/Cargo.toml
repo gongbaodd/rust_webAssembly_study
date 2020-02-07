@@ -8,4 +8,4 @@ edition = "2018"
 
 [dependencies]
 dotenv = "0.15.0"
-diesel = "1.4.3"
+diesel = { version = "1.4.0", features = ["sqlite"] }
