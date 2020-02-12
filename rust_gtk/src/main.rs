@@ -5,32 +5,52 @@ extern crate gtk;
 use gio::prelude::*;
 use gtk::prelude::*;
 use std::{env::args};
+use gtk::{
+    MessageType,
+    MessageDialog,
+    Window,
+    DialogFlags,
+    ButtonsType,
+};
 
 fn main() {
-    let application = gtk::Application::new(
-        Some("rust_gtk"),
-        gio::ApplicationFlags::empty()
-    ).expect("Errors in building application");
+    if gtk::init().is_err() {
+        println!("Init Error");
+        return;
+    }
 
-    application.connect_startup(
-        |app| {
-            let window = gtk::ApplicationWindow::new(app);
+    MessageDialog::new(
+        None::<&Window>,
+        DialogFlags::empty(),
+        MessageType::Info,
+        ButtonsType::Ok,
+        "Hello World"
+    ).run();
 
-            window.set_title("Rust GTK");
-            window.set_default_size(300, 200);
-            window.connect_delete_event(move |win, _| {
-                win.destroy();
-                Inhibit(false)
-            });
+    // let application = gtk::Application::new(
+    //     Some("rust_gtk"),
+    //     gio::ApplicationFlags::empty()
+    // ).expect("Errors in building application");
 
-            let label = gtk::Label::new(Some("Hello"));
-            window.add(&label);
-            window.show_all();
-        }
-    );
+    // application.connect_startup(
+    //     |app| {
+    //         let window = gtk::ApplicationWindow::new(app);
 
-    application.connect_activate(|_| {});
-    application.run(&args().collect::<Vec<_>>());
+    //         window.set_title("Rust GTK");
+    //         window.set_default_size(300, 200);
+    //         window.connect_delete_event(move |win, _| {
+    //             win.destroy();
+    //             Inhibit(false)
+    //         });
+
+    //         let label = gtk::Label::new(Some("Hello"));
+    //         window.add(&label);
+    //         window.show_all();
+    //     }
+    // );
+
+    // application.connect_activate(|_| {});
+    // application.run(&args().collect::<Vec<_>>());
 }
 
 // install GTK dependency: https://www.gtk.org/download/windows.php
