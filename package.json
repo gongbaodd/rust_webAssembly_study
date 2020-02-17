@@ -4,7 +4,7 @@
   "description": "通过webassembly学习rust",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "commit": "git-cz"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/gongbaodd/rust_webAssembly_study/issues"
   },
-  "homepage": "https://github.com/gongbaodd/rust_webAssembly_study#readme"
+  "homepage": "https://github.com/gongbaodd/rust_webAssembly_study#readme",
+  "devDependencies": {
+    "commitizen": "^4.0.3",
+    "emoji-cz": "^0.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "emoji-cz"
+    }
+  }
 }
