@@ -1,0 +1,19 @@
+{
+  "name": "rust_webassembly_study",
+  "version": "1.0.0",
+  "description": "通过webassembly学习rust",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gongbaodd/rust_webAssembly_study.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gongbaodd/rust_webAssembly_study/issues"
+  },
+  "homepage": "https://github.com/gongbaodd/rust_webAssembly_study#readme"
+}
