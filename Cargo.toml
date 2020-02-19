@@ -1,5 +1,5 @@
 [package]
-name = "rust_webAssembly_study"
+name = "rust_webassembly_study"
 version = "0.1.0"
 authors = ["gongbaodd@Inspiron <gongbaodd@qq.com>"]
 edition = "2018"
