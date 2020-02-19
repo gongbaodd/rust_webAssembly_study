@@ -1,4 +1,6 @@
-language: required
+language: rust
+
+sudo: required
 
 before_script: 
   - |
