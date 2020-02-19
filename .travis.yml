@@ -1,6 +1,12 @@
 language: rust
+rust: 
+  1.41.0
 
 sudo: required
+
+before_cache:
+  - rm -rf "$TRAVIS_HOME/.cargo/registry/src"
+ 
 
 before_script: 
   - |
