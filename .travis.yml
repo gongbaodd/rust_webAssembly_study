@@ -1,0 +1,36 @@
+language: rust
+
+sudo: required
+
+before_script: 
+  - |
+  rustup component add rustfmt-preview
+  rustup component add clippy
+  cargo install --force cargo-audit
+  cargo generate-lockfile
+
+script:
+  - cargo audit
+  - cargo fmt --all -- --check
+  - cargo clean
+  - cargo clippy --all-targets --all-features -- -D warnings;
+  - cargo buld --verbose --all
+  - cargo test --verbose --all
+
+after_success:
+  - cargo tarpaulin --out Xml && bash <(curl -s https://codecov.io/bash)
+
+cache: cargo
+
+addons:
+  apt:
+    packages:
+      - libcurl4-openssl-dev
+      - zlib1g-dev
+      - libiberty-dev
+      - libelf-dev
+      - libdw-dev
+      - cmake
+      - gcc
+      - binutils-dev
+      - libssl-dev
