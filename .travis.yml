@@ -1,20 +1,23 @@
 language: rust
+rust: 1.41.0
 
 sudo: required
 
-before_script: 
-  - |
-  rustup component add rustfmt-preview
-  rustup component add clippy
-  cargo install --force cargo-audit
-  cargo generate-lockfile
+before_cache:
+  - rm -rf "$TRAVIS_HOME/.cargo/registry/src"
+
+before_script:
+  - rustup component add rustfmt-preview
+  - rustup component add clippy
+  - cargo install --force cargo-audit
+  - cargo generate-lockfile
 
 script:
   - cargo audit
   - cargo fmt --all -- --check
   - cargo clean
   - cargo clippy --all-targets --all-features -- -D warnings;
-  - cargo buld --verbose --all
+  - cargo build --verbose --all
   - cargo test --verbose --all
 
 after_success:
