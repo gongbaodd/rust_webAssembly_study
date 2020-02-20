@@ -1,13 +1,16 @@
+#[allow(dead_code)]
 pub enum LNodeType {
     Next(Box<LNode>),
     Null,
 }
 
+#[allow(dead_code)]
 pub struct LNode {
     pub value: u32,
     pub next: LNodeType,
 }
 
+#[allow(dead_code)]
 impl LNode {
     pub fn new(v: u32) -> LNode {
         LNode {
