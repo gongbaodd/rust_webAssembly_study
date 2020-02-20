@@ -45,7 +45,7 @@ impl<T> Queue<T> {
         }
     }
 
-    pub fn enqueue(&mut self, elem: T) -> () {
+    pub fn enqueue(&mut self, elem: T) {
         let node = Node {
             data: elem,
             next: None,
@@ -64,7 +64,7 @@ impl<T> Queue<T> {
         }
     }
 
-    pub fn dequeue(&mut self) -> () {
+    pub fn dequeue(&mut self) {
         self.head
             .take()
             .map(|old_head| match old_head.borrow_mut().next.take() {
