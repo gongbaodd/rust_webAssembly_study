@@ -21,7 +21,7 @@ script:
   - cargo test --verbose --all
 
 after_success:
-  - cargo tarpaulin --out Xml && bash <(curl -s https://codecov.io/bash)
+  - cargo tarpaulin --out Xml && bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN
 
 cache: cargo
 
