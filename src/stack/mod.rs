@@ -57,7 +57,7 @@ mod test {
     fn push_and_pop() {
         let mut s = Stack::<u32>::new();
 
-        &s.push(33);
+        s.push(33);
 
         match &s.pop() {
             Some(v) => assert_eq!(v, &33),
@@ -74,7 +74,7 @@ mod test {
     fn push_and_pop_fun() {
         let mut s = Stack::<u32>::new();
 
-        &s.push(33);
+        s.push(33);
 
         match &s.pop_fun() {
             Some(v) => assert_eq!(v, &33),
