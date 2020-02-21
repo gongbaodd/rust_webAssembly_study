@@ -9,8 +9,8 @@ before_cache:
 before_script:
   - rustup component add rustfmt-preview
   - rustup component add clippy
-  - cargo install --force cargo-audit
-  - cargo install --force cargo-tarpaulin
+  - cargo install cargo-audit
+  - cargo install cargo-tarpaulin
   - cargo generate-lockfile
 
 script:
