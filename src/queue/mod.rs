@@ -39,10 +39,7 @@ impl<T> Queue<T> {
     }
 
     pub fn is_empty(&self) -> bool {
-        match &self.head {
-            None => true,
-            Some(_) => false,
-        }
+        !&self.head.is_none()
     }
 
     pub fn enqueue(&mut self, elem: T) {
@@ -65,7 +62,8 @@ impl<T> Queue<T> {
     }
 
     pub fn dequeue(&mut self) {
-        self.head
+        let _ = self
+            .head
             .take()
             .map(|old_head| match old_head.borrow_mut().next.take() {
                 None => self.tail = None,
