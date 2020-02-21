@@ -39,7 +39,7 @@ impl<T> Queue<T> {
     }
 
     pub fn is_empty(&self) -> bool {
-        !&self.head.is_none()
+        self.head.is_none()
     }
 
     pub fn enqueue(&mut self, elem: T) {
