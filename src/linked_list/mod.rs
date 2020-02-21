@@ -1,18 +1,18 @@
 #[allow(dead_code)]
-enum List<T = u32> {
-    Value(T, Box<List>),
+pub enum List<T> {
+    Value(T, Box<List<T>>),
     Null,
 }
 
 use crate::linked_list::List::*;
 
 #[allow(dead_code)]
-impl List<u32> {
-    pub fn new() -> List {
+impl<T> List<T> {
+    pub fn new() -> List<T> {
         List::Null
     }
 
-    pub fn prepend(self, item: u32) -> List {
+    pub fn prepend(self, item: T) -> List<T> {
         List::Value(item, Box::new(self))
     }
 
@@ -24,8 +24,8 @@ impl List<u32> {
         }
     }
 
-    pub fn to_vec(&self) -> Vec<u32> {
-        match *self {
+    pub fn to_vec(&self) -> Vec<&T> {
+        match &*self {
             Value(value, ref next) => {
                 let mut arr = vec![value];
                 arr.append(&mut next.to_vec());
@@ -43,7 +43,7 @@ mod test {
 
     #[test]
     pub fn create_linked_list() {
-        let list = List::new();
+        let list = List::<u32>::new();
         assert_eq!(list.len(), 0);
     }
 
@@ -56,7 +56,7 @@ mod test {
 
         let mut vec = list.to_vec();
         while let Some(i) = vec.pop() {
-            assert_eq!(i, 1)
+            assert_eq!(i, &1)
         }
     }
 }
