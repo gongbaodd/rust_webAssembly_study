@@ -10,6 +10,7 @@ before_script:
   - rustup component add rustfmt-preview
   - rustup component add clippy
   - cargo install --force cargo-audit
+  - cargo install --force cargo-tarpaulin
   - cargo generate-lockfile
 
 script:
@@ -21,7 +22,7 @@ script:
   - cargo test --verbose --all
 
 after_success:
-  - cargo tarpaulin --out Xml && bash <(curl -s https://codecov.io/bash) -t $CODECOV_TOKEN
+  - cargo tarpaulin --out Xml && bash <(curl -s https://codecov.io/bash)
 
 cache: cargo
 
