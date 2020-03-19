@@ -358,10 +358,10 @@ detect-indent@6.0.0:
   resolved "https://registry.yarnpkg.com/detect-indent/-/detect-indent-6.0.0.tgz#0abd0f549f69fc6659a254fe96786186b6f528fd"
   integrity sha512-oSyFlqaTHCItVRGK5RmrmjB+CmaMOW7IaNA/kdxqhoa6d17j/5ce9O9eWXmV/KEdRwqpQA+Vqe8a8Bsybu4YnA==
 
-emoji-cz@0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/emoji-cz/-/emoji-cz-0.3.0.tgz#d337cb4928580277e510d91633f3755de34ae7c1"
-  integrity sha1-0zfLSShYAnflENkWM/N1XeNK58E=
+emoji-cz@0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/emoji-cz/-/emoji-cz-0.3.1.tgz#cb94835d80c4164cd467fb64252d0d62d7035def"
+  integrity sha512-6HOO2YLggBlkAFIoPNmgmPczFIqeiyK4/MlnBXYJ0HDfb5pyOicPmhvq+K4yskuTY42ObRSMKJJqWWYTTE/wlg==
   dependencies:
     conventional-commit-types "^2.0.0"
     find-config "^1.0.0"
