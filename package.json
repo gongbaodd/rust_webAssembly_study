@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/gongbaodd/rust_webAssembly_study#readme",
   "devDependencies": {
-    "commitizen": "4.0.3",
+    "commitizen": "4.1.2",
     "emoji-cz": "0.3.1"
   },
   "config": {
